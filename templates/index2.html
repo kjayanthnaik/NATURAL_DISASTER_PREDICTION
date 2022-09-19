@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>EarthQuake Prediction</title>
+  <link rel="stylesheet" href="static/css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylb.css') }}">
+
+<style>
+
+.logina{
+top: 20%;
+
+float:left;
+margin-top:5%;
+
+
+width:40%;
+}
+.loginc{
+top: 10%;
+border:5px solid red;
+float:right;
+margin-top:-2%;
+width:57%;
+}
+mark {
+ background-color: #eff213;
+  text-align: center;
+}
+mark1 {
+ background-color: #3c0170;
+  text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+ <nav class="navbar sticky-top navbar-expand-lg navbar-dark"  >
+            <div class="container-fluid" >
+              
+         <div class="ab" >
+
+              </div>
+              <div class="row donate-sponsor">
+               
+   
+               <a type="button" class="btn btn-warning mr-1" id="sponsor" href="homepage">Home Page</a>
+                
+                 <a type="button" class="btn btn-danger mr-1" id="sponsor" href="contactus">Contact Us</a>
+             
+              </div>
+            </div>
+          </nav>
+ 
+ <h2 class="text-center mt-3" style="font-size:50px;color:red;text-shadow: 10px 10px 20px green">EarthQuake Prediction<br/><br/></h2>
+      
+ <div class="logina">
+	<h2 style="font-size:26pt; float:center;color:red;"><mark>Enter the Location<br> </mark></h2>
+
+	
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="/y_predict" method="post">
+    
+
+    	<input type="text"  name="location" id="location" placeholder="enter the location" required />
+    	<h2 style="font-size:26pt; float:center;"><mark>Enter the Depth<br> </mark></h2>
+       <input type="number" step="0.01" name="depth" id="depth" placeholder="enter the depth" required />
+       
+		</select>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Click here</button>
+    
+    </form>
+
+   <br>
+   <br><h2 style="color:red; font-size:25px">
+   <mark1>{{ prediction_text }}
+ </div>
+ <div class="loginc">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+        crossorigin="anonymous">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAideOPmP7WeyglMZhHWuTgqnCr9q72H1Y&callback=initMap"
+    type="text/javascript"></script>
+    <script type="text/javascript">
+    function initMap() {
+        new google.maps.Map(document.getElementById('map'), {
+            center: {lat: {{lat}}, lng: {{lng}}},
+            zoom: 16
+          });
+    }
+    </script>
+
+    <h1></h1>
+    <div id="map" style="width:100%; height:568px;"></div>
+</div>
+
+</body>
+</html>
+

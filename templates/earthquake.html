@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>EarthQuake Prediction</title>
+
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/stylb.css') }}">
+
+<style>
+
+.logina{
+top: 20%;
+float:left;
+margin-top:5%;
+width:40%;
+}
+.loginc{
+top: 10%;
+border:5px solid red;
+float:right;
+margin-top:-2%;
+width:57%;
+}
+mark {
+ background-color: #eff213;
+  text-align: center;
+}
+mark1 {
+ background-color:aquamarine;
+  height:45px;
+  width:400px;
+  text-align: center;
+  font-size:26px;
+}
+* {
+    font-family: 'Alegreya', serif !important;
+}
+.button {
+  color: #fff;
+  text-align: center;
+  font-size:25px;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+</style>
+
+</head>
+
+<body style="overflow-y:scroll; background-image:url(/static/eqbgp.jpg)">
+  <!--img style="position:absolute; z-index:-1;height:220%;" src="/static/eqbgp.jpg"/>
+  <img style="position:absolute; z-index:-1;height:120%;width:100%;" src="/static/flds.jpg"/-->
+
+ <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+            <div class="container-fluid" >
+                <div style ="background-color:#cc2b5e;height: 60px; text-align: center;"class="container-fluid" >
+        
+                    <div  style ="background-color:#cc2b5e;text-align: center; "class="row donate-sponsor">
+                      <br/>
+                      <a class="button" href="{{url_for('home')}}">Home</a>
+                      <a  style ="margin-left:60px;;"class="button" id="donate" href="{{url_for('earth')}}">EarthQuake Prediction</a>
+                      <a  style ="margin-left:100px"class="button " id="sponsor" href="{{url_for('cyclone')}}">Cyclone Prediction</a>
+                      <a  style ="margin-left:100px"class="button " id="sponsor" href="{{url_for('flood')}}">Flood Prediction</a>
+                      <a  style ="margin-left:120px"class="button" id="sponsor" href="{{url_for('esm')}}">safety tips</a>
+                       <a  style ="margin-left:120px"class="button" id="sponsor" href="{{url_for('contact')}}">Contact Us</a>
+                       
+                   
+                    </div>
+                  </div>
+          </nav>
+      
+          
+ <h2 class="text-center mt-3" style="font-size:50px;color:palevioletred;text-align: center;">EarthQuake Prediction <br/><br/></h2>
+ <img style="height: 300px; width: 500px;margin-left:30px;"src="/static/eq.jpg" />
+      
+ <div style="margin-left: 450px;"class="logina">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{url_for('pre')}}" method="post">
+      <h2 style="font-size:26pt; float:center;color:red;"><mark>Enter the Latitude<br> </mark></h2>
+    	<input style="height:36px;width:200px"  name="latitude" id="latitude"placeholder="enter the Latitude" required />
+    	<h2 style="font-size:26pt; float:center;"><mark>Enter the Longitude<br> </mark></h2>
+       <input style="height:36px;width:200px"   name="longitude" id="longitude" placeholder="enter the Longitude" required />
+	   <h2 style="font-size:26pt; float:center;"><mark>Enter the gap<br> </mark></h2>
+       <input style="height:36px;width:200px"  name="gap" id="gap" placeholder="enter the gap" required />
+       <br /><mark1>
+        {{ prediction_text }}
+		{{info_text}}
+        </mark1> 
+		</select>
+        <br/>
+        <button style="height:40px;width:150px; margin:50px;margin-left: 160px;"  type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+        
+    </form>
+
+ </div>
+ 
+ 
+    </script>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Disasters</title>
+    <meta charset="UTF-8">
+        <!-- bootstrap css cdn -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <!-- css stylesheet -->
+        <link rel="stylesheet" href="static/css/style.css">
+        <!-- font styles cdn -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        
+                    
+
+          .container-fluid{
+            width: 100%;
+          }
+        #img{
+          width:89.7%;
+          height: 435px;
+          float: center;
+          margin-left: 5.6%;
+          background-color: rgb(116, 81, 107);
+        }
+       
+  .button {
+  color: #fff;
+  text-align: center;
+  font-size:25px;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+  
+        </style>
+        <script>
+          var img= ["http://blog.newhomesource.com/wp-content/uploads/2019/12/lightning.jpg",
+  "https://clovered.com/wp-content/uploads/2020/05/10-Top-Emergency-Preparedness-Tips-for-Natural-Disasters-1000px-min.jpg", 
+  "https://www.pandotrip.com/wp-content/uploads/2014/01/kansas-Phil-Degginger.jpg", 
+ 
+   "https://fact24.com/wp-content/uploads/2020/08/fact24-applications-naturaldisaster-floodingH500px_Q60.jpg",
+   "https://www.holidify.com/images/cmsuploads/compressed/officiallynologo1174400271710104179145826729903381098730917n_20200814191132.jpg",
+   "https://riskandinsurance.com/wp-content/uploads/2021/02/natural-disaster.jpg",
+   "https://nypost.com/wp-content/uploads/sites/2/2018/01/20180122_zaa_p133_322.jpg?quality=80&strip=all",
+   "https://i.ytimg.com/vi/a3d7tJhMc1k/maxresdefault.jpg"
+];
+
+var i=0;
+
+function im(){
+    
+    if(i<img.length){
+        
+      let sr=document.getElementById('img');
+      sr.src=img[i];
+      
+      i++;
+    }
+    else{
+        
+        i=0;
+    }
+    
+}
+
+setInterval(im,2500);
+          </script>
+        
+</head>
+<body style="background-image: url(/static/background.jpg);">
+        <img style="position:absolute; z-index:-1;height:220%;width:100%;" src="/static/background.jpg"/>
+        <!-- bootstrap navbar -->
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark"  >
+            <div style ="background-color:#cc2b5e"class="container-fluid" >
+        
+              <div  style ="background-color:#cc2b5e;margin: 10px; "class="row donate-sponsor">
+                
+                <a  style ="margin-left:60px"class="button" id="donate" href="{{url_for('earth')}}">EarthQuake Prediction</a>
+                <a  style ="margin-left:70px"class="button " id="sponsor" href="{{url_for('cyclone')}}">Cyclone Prediction</a>
+                <a  style ="margin-left:70px"class="button " id="sponsor" href="{{url_for('flood')}}">Flood Prediction</a>
+                <a  style ="margin-left:80px"class="button" id="sponsor" href="{{url_for('tech')}}">Handling</a>
+                 <a  style ="margin-left:80px"class="button" id="sponsor" href="{{url_for('contact')}}">Contact Us</a>
+
+             
+              </div>
+            </div>
+          </nav>
+
+          <!-- navbar ends -->
+       <!-- what we focus on -->
+       <h2 class="text-center mt-3" style="font-size:50px;color:red;">Natural Disasters Prediction <br/><br/></h2>
+       <div class="mnopk">
+        
+        <img style="height:450px; width:760px; margin-left:250px;"src="http://blog.newhomesource.com/wp-content/uploads/2019/12/lightning.jpg"  id="img"/>
+        <script src="imageslider.js">
+
+          </script>
+          <br />
+          <br />
+       </div>
+        <section class="our-focus">
+          <div class="container">
+              
+  
+             
+                  <div class="card" style="width: 53rem;margin-left:100px;margin-top: 10px;background-color:#50846E;">
+                    <div class="card-body">
+                      
+                      <h5 class="card-title">Vission & Mission</h5>
+                      <p class="card-text">Disasters - natural or human-made are common throughout the world. 
+                        It is believed that in the recent past there is an increase in their magnitude, complexity, frequency and economic impact.
+                         India is at the highest risk of exposure to natural hazards in the world.
+                         ML and AI, when combined, can help responders:
+                         - track and predict disaster trajectory;
+                         - identify location-based urgent needs and most impacted regions;
+                          </p>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- focus section ends -->
+
+        <!-- footer starts -->
+          <!-- Site footer -->
+          <footer class="nope">
+
+            <div class="container mt-5" >
+              <div class="row" >
+                <div class="lokip" style="width:850px;margin:20px;margin-left: 110px;">
+                  <img style="position:absolute; z-index:-1;width: 850px;height: 150px;" src="/static/img1.jpg"/>
+                  <h3>About Us</h3>
+                  <p class="text-justify" style="color:black; margin:10px;">When we are started looking up suddenly occurance of natural disasters without giving early
+                    warning , so we decided to analyze previous occurance of natural disasters & Building the Model 
+                    for the future occurance for the prediction of the natural disasters . </p>
+</div>
+                  
+
+                
+              </div>
+            <hr>
+            
+                
+              </div>
+            </div>
+      </footer>
+       
+
+          </body>
+</html>

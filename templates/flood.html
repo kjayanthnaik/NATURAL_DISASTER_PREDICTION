@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Prediction</title>
+    <meta charset="UTF-8">
+        <!-- favicon -->
+        <!-- <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <!-- <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon"> -->
+        <link rel="icon" type="image/JPG" sizes="16x16" href="/assets/img/favicon-32x32.png">
+        <!-- bootstrap css cdn -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <!-- css stylesheet -->
+        <link rel="stylesheet" href="static/css/style.css">
+        <!-- font styles cdn -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+         
+          
+        
+        #img{
+          width:89.7%;
+          height: 435px;
+          float: center;
+          margin-left: 5.6%;
+          background-color: rgb(116, 81, 107);
+        }
+        mark1 {
+ background-color:red;
+  height:45px;
+  width:400px;
+  text-align: center;
+  font-size:26px;
+        }
+        .button {
+  color: #fff;
+  text-align: center;
+  font-size:22px;
+  animation: glow 1s ease-in-out infinite alternate;
+
+}
+
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+
+        </style>
+       
+        
+</head>
+<body  >
+  <img style="position:absolute; z-index:-1;height:120%;width:100%;" src="/static/flds.jpg"/>
+  <nav class="navbar sticky-top navbar-expand-lg navbar-dark">
+    <div class="container-fluid" >
+        <div style ="background-color:#cc2b5e;height: 60px; text-align: center;"class="container-fluid" >
+
+            <div  style ="background-color:#cc2b5e;text-align: center; "class="row donate-sponsor">
+              <br/>
+              <a  style ="margin-left:30px;"class="button" id="donate" href="{{url_for('home')}}">Home</a>
+              <a  style ="margin-left:70px;"class="button" id="donate" href="{{url_for('earth')}}">EarthQuake Prediction</a>
+              <a  style ="margin-left:70px"class="button " id="sponsor" href="{{url_for('cyclone')}}">Cyclone Prediction</a>
+              <a  style ="margin-left:70px"class="button " id="sponsor" href="{{url_for('flood')}}">Flood Prediction</a>
+              <a  style ="margin-left:120px"class="button" id="sponsor" href="{{url_for('fs')}}">safety tips</a> 
+              <a  style ="margin-left:70px"class="button" id="sponsor" href="{{url_for('contact')}}">Contact Us</a>
+               
+           
+            </div>
+          </div>
+  </nav>
+<div>
+       <h2 class="text-center mt-3" style="font-size:50px;color:black;text-shadow: 10px 10px 20px blue">Flood Prediction <br/><br/></h2>
+       <div class="mnopk" style="background-color: lightblue; width:100%;height:50%; text-align:center">
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{url_for('flo')}}" method="post">
+    	<input style="width:35%;" type="text"  name="temperature" id="temperature" placeholder="Enter the temperature" required />
+    	<input style="width:35%;" type="text"  name="altitude" id="altitude" placeholder="enter the altitude" required />
+    	<input style="width:35%;" type="text"  name="avg" id="avg" placeholder="enter average" required />    	
+		</select>
+        <button style="width:20%;margin-top:10px;margin-left:40%" type="submit" class="btn btn-primary btn-block btn-large">Click here</button>
+       
+   <mark1>{{ prediction_text }}</mark1>
+
+      </form>
+      </div>
+</div>
+   <br>
+          </body>
+</html>
